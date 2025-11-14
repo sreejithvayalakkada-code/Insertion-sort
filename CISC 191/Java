@@ -1,0 +1,63 @@
+Here is the link to the flowchart:
+https://app.diagrams.net/#G17wD1o9YHcsmhIEFSM5-MWxd-Gj9sgnDC#%7B%22pageId%22%3A%22dshPq_wfwOcNY8wUwdxh%22%7D
+Here is the link to the video:
+https://screenpal.com/content/video/cTX2f6nF8xu?top-banner=online-recorder-details
+Here is the link to the code:
+https://onecompiler.com/java/444kt29d5
+Here is the actual code:
+import java.util.*;
+
+public class InsertionSortActivity {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read size
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        // Read elements
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Output original array
+        printArray(arr);
+
+        int comparisons = 0;
+        int swaps = 0;
+
+        // Insertion sort
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+
+            while (j >= 0) {
+                comparisons++;  // each check is a comparison
+                if (arr[j] > key) {
+                    arr[j + 1] = arr[j];
+                    swaps++;
+                    j--;
+                } else {
+                    break;
+                }
+            }
+
+            arr[j + 1] = key;
+
+            // Output after each pass
+            printArray(arr);
+        }
+
+        System.out.println();
+        System.out.println("comparisons: " + comparisons);
+        System.out.println("swaps: " + swaps);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int n : arr) {
+            System.out.print(n + " ");
+        }
+        System.out.println();
+    }
+}
